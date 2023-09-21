@@ -1,0 +1,12 @@
+{
+  "name": "trello-paraguay",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TrelloGrupo2/trello-paraguay.git",
+  "author": "Kauã Werle <kauawerle19@gmail.com.br>",
+  "license": "MIT",
+  "private": null,
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8"
+  }
+}
