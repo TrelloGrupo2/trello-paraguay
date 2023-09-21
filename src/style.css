@@ -5,28 +5,37 @@
 }
 
 nav {
-    height: 50px;
+    height: 60px;
     width: 100%;
     background-color: rgb(51, 50, 50);
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
-nav h1 {
-    padding-left: 10px;
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+nav strong {
     color: azure;
+    font-size: 20px;
 }
 
 .dropbtn {
-    margin-left: 80%;
     border-style: none;
     height: 35px;
-    width: 45px;
-    background-color:lightgrey;
+    width: 7rem;
+    background-color: #195fc2;
     border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
 }
 
 .dropbtn:hover {
     transition: 0.5s;
-    background-color: gray;
+    background-color: rgb(58, 58, 216);
 }
