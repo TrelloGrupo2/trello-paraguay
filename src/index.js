@@ -18,3 +18,9 @@ function displayMenuDrop(){
     optionsDrop.style.display = optionsDrop.style.display = "none";
 }
   
+
+function changingBackgroundColor(){
+    let colorInput = document.querySelector('.colorInput').value;
+    let body = document.getElementById('body');
+    body.style.backgroundColor = colorInput;
+}

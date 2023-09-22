@@ -49,6 +49,7 @@ nav strong {
     height: 8,9em;
     width: 15em;
     right: 3em;
+    display:none;
   
 }
 
@@ -84,10 +85,10 @@ nav strong {
     justify-content: center;
     align-items: center;
 }
-.colorSelect {
-    border-radius: 2px;
-    border-width: 3px;
+.colorInput{
+    border-radius: 15px;
+    background-color: transparent;
+    border: 2px;
     width: 6em;
     height: 6em;
-
 }
