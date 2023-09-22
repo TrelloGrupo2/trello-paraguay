@@ -38,16 +38,15 @@ nav strong {
 }
 
 .dropbtn:hover {
-    transition: 0.5s;
-    background-color: rgb(58, 58, 216);
+    background-color: rgb(26, 26, 182);
 }
 
 .menuDrop{
     position:absolute;
     box-sizing: border-box;
-    background-color: bisque;
-    border-radius: 2px;
-    height: 9em;
+    background-color: #195fc2;
+    border-radius: 5px;
+    height: 8,9em;
     width: 15em;
     right: 3em;
   
@@ -74,7 +73,9 @@ nav strong {
     font-size: 17px;
 }
 .optionsDrop ul li:hover{
-    background-color: red;
+    background-color: rgb(26, 26, 182);
+    border-radius: 5px;
+    margin-inline: 1px;
 }
 .backgroundColorOption{
     width: 100%;
