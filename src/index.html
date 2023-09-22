@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trello del Paraguay</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../src/style.css" />
-  </head>
-  <body>
-    <!-- Navigation Bar Start-->
-    <nav class="navbar">
-      <div class="header">
-        <strong>TRELLO DEL PARAGUAY</strong>
-        <button href="#" class="dropbtn">MENU</button>
-      </div>
-    </nav>
-    <!-- Navigation Bar End -->
-    <div class="menuCor" id="menuCor">
-      <input type="color" name="" id="">
-    </div>
-  </body>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trello del Paraguay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/4d1a1b2ac1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+
+<header>
+  <!-- Navigation Bar Start-->
+  <nav class="navbar">
+    <div class="header">
+      <strong>TRELLO DEL PARAGUAY</strong>
+      <button href="#" class="dropbtn" onclick="menuCor()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <div class="menuCor">
+    <input type="color" class="colorSelect" id="menuCor">
+  </div>
+  <!-- Navigation Bar End -->
+</header>
+
+<body>
+
+</body>
+  <script src="./index.js"></script>
 </html>
