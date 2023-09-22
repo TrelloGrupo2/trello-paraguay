@@ -34,3 +34,9 @@ Realizar a entrega da documentação:
 - Diagrama de Sequência
 Entrega do projeto
 Realizar a entrega do projeto em pleno funcionamento.
+
+## Como rodar o projeto
+
+- Tenha o yarn instalado na maquina, caso não tenha use o comando: `npm i --global yarn`
+- Instale as dependencias usando o comando `yarn`
+- Rode o index.html com o live server ou abrindo o arquivo index.html
