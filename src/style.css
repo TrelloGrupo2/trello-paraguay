@@ -41,51 +41,57 @@ nav strong {
     background-color: rgb(26, 26, 182);
 }
 
-.menuDrop{
-    position:absolute;
+.menuDrop {
+    position: absolute;
     box-sizing: border-box;
     background-color: #195fc2;
     border-radius: 5px;
-    height: 8,9em;
+    height: 8, 9em;
     width: 15em;
     right: 3em;
-    display:none;
-  
+    display: none;
+    color: azure;
 }
 
-.optionsDrop ul{
-    list-style: none; 
+.optionsDrop ul {
+    list-style: none;
     width: 100%;
 }
-.optionsDrop ul li{
+
+.optionsDrop ul li {
     width: 100%;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     cursor: pointer;
-    text-decoration: none!important;
-    padding: 1.5em 1.1em 1.5em 1.1em ;
+    text-decoration: none !important;
+    padding: 1.5em 1.1em 1.5em 1.1em;
 }
-.optionsDrop ul li a{
+
+.optionsDrop ul li a {
     padding-left: 1em;
     font-size: 18px;
 }
-.optionsDrop ul li i{
+
+.optionsDrop ul li i {
     padding-top: 3px;
     font-size: 17px;
 }
-.optionsDrop ul li:hover{
+
+.optionsDrop ul li:hover {
     background-color: rgb(26, 26, 182);
     border-radius: 5px;
     margin-inline: 1px;
 }
-.backgroundColorOption{
+
+.backgroundColorOption {
     width: 100%;
     height: 100%;
-    display:none;
+    display: none;
     justify-content: center;
     align-items: center;
 }
-.colorInput{
+
+.colorInput {
     border-radius: 15px;
     background-color: transparent;
     border: 2px;

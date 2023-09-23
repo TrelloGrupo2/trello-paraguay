@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trello del Paraguay</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/4d1a1b2ac1.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../src/style.css" />
-  </head>
 
-  <header>
-    <body id="body">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trello del Paraguay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/4d1a1b2ac1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+
+<header>
+
+  <body id="body">
     <!-- Navigation Bar Start-->
     <nav class="navbar">
       <div class="header">
@@ -33,17 +29,17 @@
 
             <div class="optionsDrop" id="optionsDrop">
               <ul>
-                <li>
+                <!-- <li>
                   <i class="fa-solid fa-brush"></i>
                   <a class="noDecoration">Alterar tema</a>
-                </li>
+                </li> -->
                 <li onclick="changeBackgroundColor()">
                   <i class="fa-solid fa-eye-dropper"></i>
                   <a>Alterar Cor de fundo</a>
                 </li>
               </ul>
             </div>
-            
+
             <div class="backgroundColorOption" id="backgroundColorOption">
               <input type="color" class="colorInput" onchange="changingBackgroundColor()" />
             </div>
@@ -54,8 +50,9 @@
     </nav>
     <div class="menuCor"></div>
     <!-- Navigation Bar End -->
-  </header>
+</header>
 
-  </body>
-  <script src="./index.js"></script>
+</body>
+<script src="./index.js"></script>
+
 </html>
