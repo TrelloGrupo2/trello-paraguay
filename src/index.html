@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trello del Paraguay</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/4d1a1b2ac1.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../src/style.css" />
-  </head>
 
-  <header>
-    <body class ="body"id="body">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trello del Paraguay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/4d1a1b2ac1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body class="body" id="body">
     <!-- Navigation Bar Start-->
+<header>
     <nav class="navbar">
       <div class="header">
         <strong>TRELLO DEL PARAGUAY</strong>
 
-        <div class="containerMenuButton">
+
+        <div class="containerMenu">
+
           <button href="#" class="dropbtn" onclick="displayMenuDrop()">
-            <i class="fa-sharp fa-solid fa-bars"></i>                  
+            <i class="fa-sharp fa-solid fa-bars"></i>
           </button>
-
+          
           <div class="menuDrop" id="menuDrop" style="display: none;">
-
             <div class="optionsDrop" id="optionsDrop">
               <ul>
                 <li onclick="selectThemeOption()">
@@ -46,29 +41,42 @@
 
             <div class="selectThemeOption" id="selectThemeOption">
               <ul>
-                <li onclick="changingThemeToLight()">
+                <li id="themeLightOption" onclick="changingThemeToLight()">
                   <i class="fa-solid fa-sun"></i>
                   <a class="noDecoration">Tema claro</a>
+                  <div class="checkTheme">
+                    <i id="lightCheck" class="fa-solid fa-check" style="display:flex"></i>
+                  </div>
                 </li>
                 <li onclick="changingThemeToDark()">
                   <i class="fa-solid fa-moon"></i>
                   <a class="darkTheme">Tema escuro</a>
+                  <div class="checkTheme">
+                    <i id="darkCheck" class="fa-solid fa-check" style="display:none"></i>
+                  </div>
                 </li>
               </ul>
             </div>
-    
+
             <div class="backgroundColorOption" id="backgroundColorOption">
               <input type="color" class="colorInput" onchange="changingBackgroundColor()" />
             </div>
 
           </div>
-        </div>
       </div>
     </nav>
+</header>
     <!-- Navigation Bar End -->
-  </header>
-   <!-- Navigation Bar End -->
-  
-  </body>
-  <script src="./index.js" defer></script>
+
+<div class="content">
+  <div>
+    <div class="newColumn">
+      <button>      </button>
+    </div> 
+  </div> 
+
+</div>
+</body>
+<script src="./index.js" defer></script>
+
 </html>

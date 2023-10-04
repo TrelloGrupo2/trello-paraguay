@@ -3,11 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Barlow", sans-serif;
+  transition: background-color 130ms linear;
 }
 :root {
-  --dark-theme-color-1: #27292a; /* BACKGROUND HEADER */
+  --dark-theme-color-1: #2a2d2e; /* BACKGROUND HEADER */
   --dark-theme-color-2: #1f2223; /* HOVER*/
-  --dark-theme-color-3: #232525; /* BACKGROUND DROPDOWN */
+  --dark-theme-color-3: #282b2b; /* BACKGROUND DROPDOWN */
 
   --light-theme-color-1: #f6f8fa; /* BACKGROUND HEADER */
   --light-theme-color-2: #f4f6f8; /* BACKGROUND DROPDOWN */
@@ -15,17 +16,17 @@
   --light-theme-color-4: #d8dee4; /* BORDER*/
   --light-theme-color-5: #313338; /* FONT COLOR*/
 }
+body{
+  height: 100vh;
+}
 /* CORES  DARK*/
 .dark nav {
   background-color: var(--dark-theme-color-1);
-  border-color: var(--dark-theme-color-2);
 }
 .dark nav strong {
   color: azure;
 }
-.dark .body {
-  background-color: var(--dark-theme-color-1);
-}
+
 .dark .dropbtn i {
   color: azure;
 }
@@ -45,13 +46,9 @@
 /* CORES  WHITE*/
 nav {
   background-color: var(--light-theme-color-1);
-  border-color: var(--light-theme-color-4);
 }
 nav strong {
   color: var(--light-theme-color-5);
-}
-.body {
-  background-color: #ffff;
 }
 .dropbtn i {
   color: var(--light-theme-color-5);
@@ -69,14 +66,12 @@ nav strong {
   background-color: var(--light-theme-color-3);
 }
 
+/*  HEADER  */
 nav {
   height: 3.6em;
   width: 100%;
-  border-width: 1px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom-style: solid;
 }
 
 .header {
@@ -89,16 +84,15 @@ nav {
 
 nav strong {
   font-size: 24px;
+  letter-spacing: -0.05em;
 }
-/* MENU CSS  */
+/* MENU DROPDOWN */
 .dropbtn {
   height: 2.8rem;
   width: 2.8rem;
   border-radius: 50%;
   border-style: none;
   background-color: transparent;
-
-  font-weight: 700;
 }
 .dropbtn i {
   font-size: 20px;
@@ -106,25 +100,26 @@ nav strong {
 .dropbtn:hover {
   cursor: pointer;
 }
-
 .menuDrop {
   border-radius: 5px;
-  height: 8.9em;
+  height: 8.76em;
   width: 15em;
   right: 7em;
   position: absolute;
   box-sizing: border-box;
   display: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 2.4px 2.4px 3.2px;
 }
-
 .optionsDrop ul,
 .selectThemeOption ul {
   list-style: none;
   width: 100%;
+
 }
 
 .optionsDrop ul li,
 .selectThemeOption ul li {
+  border-radius: 5px;
   width: 100%;
   padding: 1.5em 1.1em 1.5em 1.1em;
   display: flex;
@@ -136,6 +131,7 @@ nav strong {
 .selectThemeOption ul li a {
   padding-left: 1em;
   font-size: 18px;
+  flex: 2;
 }
 
 .optionsDrop ul li i,
@@ -160,4 +156,11 @@ nav strong {
 }
 .colorInput:hover {
   cursor: pointer;
+}
+
+/*  BODY  */
+
+.content{
+  height: 100%;
+  width: 100%;
 }
