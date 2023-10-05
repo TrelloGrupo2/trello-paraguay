@@ -1,0 +1,44 @@
+.content{
+    padding-top: 2em;
+}
+.content form{
+    width: 100%;
+}
+.newColumnContainer{
+    width: 30em;
+    height: 100%;
+    padding: 0 6%;
+    display: flex;
+    justify-content: center;
+}
+.newColumnInput{
+    width: 100%;
+    height: 2em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc; 
+}
+.newColumnButton{
+    font-size: 18px;
+    width: 100%;
+    height: 2em;
+    font-size: 1em;
+    border-style: none;
+    background-color: dodgerblue;
+    cursor:pointer;
+}
+.newColumnButtonContainer{
+    display:flex;
+    justify-content: space-between;
+    padding: 0.3em 0.5em;
+}
+.newColumnConfirmButton, .newColumnBackButton{
+    font-size: 16px;
+    padding: 0.3em;
+    border-radius: 2px;
+    background-color: greenyellow;
+    border: none;
+    cursor:pointer;
+
+}

@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/4d1a1b2ac1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../src/style.css" />
+  <link rel="stylesheet" href="../src/content.css" />
+
 </head>
 <body class="body" id="body">
     <!-- Navigation Bar Start-->
@@ -68,15 +70,26 @@
 </header>
     <!-- Navigation Bar End -->
 
-<div class="content">
-  <div>
-    <div class="newColumn">
-      <button>      </button>
+<section class="content">
+  
+    <div class="newColumnContainer">
+      <form action="#">
+        <button class="newColumnButton" id="newColumnButton" style="display:block" onclick="newColumnButtonAction()"> Nova coluna </button>
+
+        <div class="newColumnConfirmContainer" id="newColumnConfirmContainer" style="display:none">
+          <input type="text" placeholder="Insira o nome" class="newColumnInput" >
+            <div class="newColumnButtonContainer">
+             <button class="newColumnBackButton" onclick="newColumnButtonBack()"> Voltar </button>
+             <button class="newColumnConfirmButton"> Confirmar </button>
+            </div>
+          </div>
+      </form>
     </div> 
-  </div> 
+
+  </section> 
 
 </div>
 </body>
 <script src="./index.js" defer></script>
-
+<script src="./content.js" defer></script>
 </html>

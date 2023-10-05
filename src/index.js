@@ -41,7 +41,7 @@ function displayMenuDrop() {
 
 function changingBackgroundColor() {
   let colorInput = document.querySelector(".colorInput").value;
-  let body = document.getElementById("content");
+  let body = document.getElementById("body");
   body.style.backgroundColor = colorInput;
 }
 
