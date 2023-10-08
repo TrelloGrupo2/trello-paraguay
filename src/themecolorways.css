@@ -1,0 +1,141 @@
+:root {
+    --dark-theme-color-1: #2a2d2e; /* BACKGROUND HEADER */
+    --dark-theme-color-2: #1f2223; /* HOVER*/
+    --dark-theme-color-3: #282b2b; /* BACKGROUND DROPDOWN */
+    --dark-theme-color-4: #02429C;
+
+    --light-theme-color-1: #f6f8fa; /* BACKGROUND HEADER */
+    --light-theme-color-2: #f4f6f8; /* BACKGROUND DROPDOWN */
+    --light-theme-color-3: #edeff3; /* HOVER*/
+    --light-theme-color-4: #d8dee4; /* BORDER*/
+    --light-theme-color-5: #313338; /* FONT COLOR*/
+    --light-theme-color-6: #2c6fcc;
+  }
+
+
+  /* CORES  DARK*/
+  /* NAV */
+.dark nav {
+    background-color: var(--dark-theme-color-1);
+  }
+  .dark nav strong {
+    color: azure;
+  }
+  
+  .dark .dropbtn i {
+    color: azure;
+  }
+  .dark .dropbtn:hover {
+    background-color: var(--dark-theme-color-2);
+  }
+  
+  .dark .menuDrop {
+    background-color: var(--dark-theme-color-3);
+    color: azure;
+  }
+  .dark .optionsDrop ul li:hover,
+  .dark .selectThemeOption ul li:hover {
+    background-color: var(--dark-theme-color-2);
+  }
+  /* CONTENT */
+
+  .dark .column{
+    background-color: var(--dark-theme-color-1);
+    color: azure;
+  }
+  .dark .column i {
+    color: azure;
+  }
+  .dark .renameInput, .dark .newColumnInput{
+    border:none;
+    outline-color: var(--dark-theme-color-4);
+    background: var(--dark-theme-color-3);
+    color: white;
+
+  }
+ .dark .cancelRenameButton:hover, .dark .confirmRenameButton:hover, .dark .renameColumnButton:hover, .dark .deleteColumnButton:hover {
+
+    background-color: var(--dark-theme-color-3);
+  }
+  .dark .newColumnConfirmContainer{
+    background-color: var(--dark-theme-color-1);
+  }
+  .dark .newColumnButton{
+    background-color: var(--dark-theme-color-1);
+    opacity: 93%;
+    color: white
+  }
+  .dark .newColumnButton:hover{
+    background-color: var(--dark-theme-color-3);
+    opacity: 100%;
+  }
+  .dark .newColumnConfirmButton, .dark .newColumnBackButton, .dark .newTaskBackButton, .dark .newTaskConfirmButton{
+    background-color: var(--dark-theme-color-1);
+    opacity: 93%;
+    color: white
+  }
+  .dark .newColumnConfirmButton:hover, .dark .newColumnBackButton:hover, .dark .newTaskBackButton:hover, .dark .newTaskConfirmButton:hover{
+    background-color: var(--dark-theme-color-3);
+    opacity: 100%;
+}
+ 
+  /* CORES  WHITE*/
+    /* NAV */
+  nav {
+    background-color: var(--light-theme-color-1);
+  }
+  nav strong {
+    color: var(--light-theme-color-5);
+  }
+  .dropbtn i {
+    color: var(--light-theme-color-5);
+  }
+  .dropbtn:hover {
+    background-color: var(--light-theme-color-3);
+  }
+  
+  .menuDrop {
+    background-color: var(--light-theme-color-2);
+    color: var(--light-theme-color-5);
+  }
+  .optionsDrop ul li:hover,
+  .selectThemeOption ul li:hover {
+    background-color: var(--light-theme-color-3);
+  }
+
+  /* CONTENT */
+
+  .column{
+    background-color: var(--light-theme-color-1);
+  }
+  .column i {
+    color:var(--light-theme-color-5);
+  }
+  .renameInput, .newColumnInput{
+    border:none;
+    outline-color: var(--light-theme-color-6);
+    background: white;
+
+  }
+  .cancelRenameButton:hover, .confirmRenameButton:hover, .renameColumnButton:hover, .deleteColumnButton:hover {
+
+    background-color: var(--light-theme-color-3);
+  }
+  .newColumnButton{
+    background-color: var(--light-theme-color-2);
+    opacity: 80%;
+  }
+  .newColumnButton:hover{
+    background-color: var(--light-theme-color-3);
+    opacity: 100%;
+  }
+  .newColumnConfirmButton, .newColumnBackButton, .newTaskBackButton,.newTaskConfirmButton{
+    background-color: var(--light-theme-color-2);
+    opacity: 80%;
+
+  }
+  .newColumnConfirmButton:hover, .newColumnBackButton:hover, .newTaskBackButton:hover,.newTaskConfirmButton:hover{
+    background-color: var(--light-theme-color-3);
+    opacity: 100%;
+
+}
