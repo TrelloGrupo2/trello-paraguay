@@ -11,6 +11,7 @@
   <script src="https://kit.fontawesome.com/4d1a1b2ac1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../src/style.css" />
   <link rel="stylesheet" href="../src/content.css" />
+  <link rel="stylesheet" href="../src/themecolorways.css" />
 
 </head>
 <body class="body" id="body">
@@ -22,7 +23,6 @@
 
 
         <div class="containerMenu">
-
           <button href="#" class="dropbtn" onclick="displayMenuDrop()">
             <i class="fa-sharp fa-solid fa-bars"></i>
           </button>
@@ -70,22 +70,67 @@
 </header>
     <!-- Navigation Bar End -->
 
-<section class="content">
+<section class="content" id="content">
   
-    <div class="newColumnContainer">
-      <form action="#">
-        <button class="newColumnButton" id="newColumnButton" style="display:block" onclick="newColumnButtonAction()"> Nova coluna </button>
-
+    <div class="newColumnContainer" id="newColumnContainer">
+      <!--<form action="#">-->
+          <button class="newColumnButton" id="newColumnButton" style="display:block" onclick="newColumnButtonAction()"> Nova coluna </button>
         <div class="newColumnConfirmContainer" id="newColumnConfirmContainer" style="display:none">
-          <input type="text" placeholder="Insira o nome" class="newColumnInput" >
+          <input type="text" placeholder="Insira o nome da coluna" class="newColumnInput" id="newColumnInput""> 
             <div class="newColumnButtonContainer">
              <button class="newColumnBackButton" onclick="newColumnButtonBack()"> Voltar </button>
-             <button class="newColumnConfirmButton"> Confirmar </button>
+             <button class="newColumnConfirmButton" onclick="createNewColumn()"> Confirmar </button>
             </div>
           </div>
-      </form>
+      <!-- </form>-->
     </div> 
 
+
+<!-- COLUMN SAMPLE FOR TESTS ETC:
+    <div class="column">
+
+      <div class="columnHeader">
+
+      <div class="columnNameContainer"  style="display:none">
+        <span class="columnName"> nome colunaduasguds</span>
+        <button><i class="fa-solid fa-pen"></i></button>
+      </div>
+
+      <div class="columnRenameContainer">
+        <input type="text" class="renameInput">
+        <button class="cancelRenameButton" onclick="renameButton(this)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="confirmRenameButton">
+          <i class="fa-solid fa-check"></i>
+        </button>
+
+      </div>
+
+
+
+      <div class="columnDeleteContainer">
+        <button class="deleteContainer"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+    </div>
+
+      <div class ="newTaskContainer">
+        <form action="#">
+          <button class="newTaskButton" id="newTaskButton" style="display:block" onclick="newTaskButtonAction()"> Nova tarefa </button>
+
+          <div class="newTaskConfirmContainer" id="newTaskConfirmContainer" style="display:none">
+            <input type="text" placeholder="Insira o nome da task" class="newTaskInput" >
+              <div class="newTaskButtonContainer">
+              <button class="newTaskBackButton" onclick="newTaskButtonBack()"> Voltar </button>
+              <button class="newTaskConfirmButton"> Confirmar </button>
+              </div>
+            </div>
+        </form>
+      </div>
+
+    </div>
+ -->
   </section> 
 
 </div>

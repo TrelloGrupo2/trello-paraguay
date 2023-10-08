@@ -1,44 +1,147 @@
 .content{
-    padding-top: 2em;
+    padding-top: 1.2em;
+    display: flex;
 }
-.content form{
+
+.newColumnContainer form{
     width: 100%;
 }
-.newColumnContainer{
-    width: 30em;
+.newColumnContainer, .column{
+    width: 20em;
     height: 100%;
-    padding: 0 6%;
+    padding: 0 1%;
     display: flex;
     justify-content: center;
 }
-.newColumnInput{
-    width: 100%;
-    height: 2em;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-bottom: 1px solid #ccc; 
+.column{
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 1.5em;
+    border-radius: 12px;
 }
-.newColumnButton{
-    font-size: 18px;
-    width: 100%;
+.newColumnContainer form {
+    display: flex;
+    justify-content: center;
+}
+
+.newColumnInput, .newTaskInput{
+    margin-top: 1em;
+    width: 85%;
     height: 2em;
+    outline-style: solid;
+    outline-width: 2px;
+    border-radius: 3px;
+    padding-left: 0.5em;
+}
+.newColumnButton, .newTaskButton{
+    width: 50%;
+    height: 2.5em;
     font-size: 1em;
     border-style: none;
-    background-color: dodgerblue;
     cursor:pointer;
+    border-radius: 15px;
 }
-.newColumnButtonContainer{
+.newColumnButtonContainer, .newTaskButtonContainer{
+    margin-top: 0.5em;
     display:flex;
     justify-content: space-between;
     padding: 0.3em 0.5em;
 }
-.newColumnConfirmButton, .newColumnBackButton{
+.newColumnConfirmButton, .newColumnBackButton, .newTaskBackButton,.newTaskConfirmButton{
     font-size: 16px;
-    padding: 0.3em;
-    border-radius: 2px;
-    background-color: greenyellow;
+    margin-top: 0.3em;
+    padding: 0.5em;
+    border-radius: 15px;
     border: none;
     cursor:pointer;
 
+}
+.newColumnConfirmContainer, .newTaskConfirmContainer{
+    width: 90%;
+    height: 16%;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.newTaskContainer form{
+    display: flex;
+    justify-content: center;
+
+}
+.column .newTaskContainer{
+    width: 100%;
+    height: 6em;   
+    padding-top: 2em;
+}
+.column .columnNameContainer{
+    width: 100%;
+    height: 2em;
+    box-sizing: border-box;
+}
+.columnName{
+    font-size: 18px;
+}
+.columnNameContainer button, .columnHeader button{
+    background-color: transparent;
+    border-style: none;
+    cursor:pointer;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+
+.columnHeader{
+    height: 3.5em;
+    padding-top: 1em;
+    display:flex;
+    justify-content: space-between;
+}
+.renameInput{
+    padding: 0.3em;
+    font-size: 18px;
+    border-radius: 3px;
+    background-color: transparent;
+    border: none;
+    width: 10em;    
+    height: 1.4em;
+    outline-style: solid;
+    outline-width: 2px;
+}
+.renameInput::-webkit-input-placeholder { /* WebKit browsers */
+    font-size: 14px;
+}
+
+.renameInput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 14px;
+}
+
+.renameInput::-moz-placeholder { /* Mozilla Firefox 19+ */
+     font-size: 14px;
+}
+
+
+.columnRenameContainer{
+    width: 100%;
+}
+.cancelRenameButton, .confirmRenameButton {
+    margin-left: 0.3em;
+    font-size: 24px;
+}
+.cancelRenameButton i, .confirmRenameButton i{
+    width: 17px;
+    height: 17px;
+    font-size: 22px;
+}
+.deleteColumnButton, .cancelRenameButton, .confirmRenameButton,.renameColumnButton {
+    border-radius: 50%;
+}
+.renameColumnButton {
+    font-size: 18px;
+    margin-left: 0.4em;
+}
+.renameColumnButton i{
+    font-size: 11px;
+}
+.deleteColumnButton{
+    font-size: 24px;
 }
