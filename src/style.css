@@ -18,6 +18,7 @@ nav {
   width: 100%;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   display: flex;
+  position: fixed;
 }
 
 .header {
