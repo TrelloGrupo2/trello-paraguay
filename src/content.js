@@ -1,11 +1,9 @@
 const newColumnInput = document.getElementById("newColumnInput");
-console.log(newColumnInput)
 newColumnInput.addEventListener("keyup", ({key}) => {
   if (key === "Enter") {
     createNewColumn();
   }
   })
-
 
 function newColumnButtonAction() {
     let newColumnButton = document.getElementById("newColumnButton");
@@ -33,24 +31,14 @@ function newColumnButtonAction() {
   }
   
 
-  function newTaskButtonAction() {
-    let newTaskButton = document.getElementById("newTaskButton");
-
+  function newTaskButtonAction(el) {
+    const newTaskButton = el;
+    const newTaskConfirmContainer = newTaskButton.nextSibling;
+   
     newTaskButton.style.display =
     newTaskButton.style.display === "block" ? "none" : "block";
   
-    let newTaskConfirmContainer = document.getElementById("newTaskConfirmContainer");
-    newTaskConfirmContainer.style.display = newTaskConfirmContainer.style.display = "block";
-  
-  }
-  function newTaskButtonBack() {
-    let newTaskButton = document.getElementById("newTaskButton");
-
-    newTaskButton.style.display =
-    newTaskButton.style.display === "none" ? "block" : "none";
-  
-    let newTaskConfirmContainer = document.getElementById("newTaskConfirmContainer");
-    newTaskConfirmContainer.style.display = newTaskConfirmContainer.style.display = "none";
+    newTaskConfirmContainer.style.display = newTaskConfirmContainer.style.display = "flex";
   
   }
   
@@ -69,17 +57,27 @@ function newColumnButtonAction() {
     column.classList.add("column");
     let columnId = `id-${Date.now()}`;
     column.id = columnId;
-
     const columnHeader = document.createElement("div");
     columnHeader.classList.add("columnHeader");
 
     const columnNameContainer = document.createElement("div");
     columnNameContainer.classList.add("columnNameContainer");
-    columnNameContainer.style.display ="block"
+    columnNameContainer.style.display ="flex"
+    columnNameContainer.onmouseover = function(){
+      
+     const  renameColumnButton = this.firstChild.nextSibling;
+     renameColumnButton.style.display = "flex";
+
+    }
+    columnNameContainer.onmouseout = function(){
+      const  renameColumnButton = this.firstChild.nextSibling;
+      renameColumnButton.style.display = "none";
+    }
+
 
     const columnDeleteContainer = document.createElement("div");
     columnDeleteContainer.classList.add("columnDeleteContainer");
-    columnDeleteContainer.style.display ="block"
+    columnDeleteContainer.style.display ="block";
 
     const columnName = document.createElement("span");
     columnName.classList.add("columnName");
@@ -87,6 +85,7 @@ function newColumnButtonAction() {
 
     const renameColumnButton = document.createElement("button");
     renameColumnButton.classList.add("renameColumnButton");
+    renameColumnButton.style.display = "none";
     renameColumnButton.onclick = function(){
       renameButtonDisplay(this);
     }
@@ -143,11 +142,54 @@ function newColumnButtonAction() {
       renameConfirmButton(this);
     }
 
+    // NEW TASK 
+    const newTaskContainer = document.createElement("div");
+    newTaskContainer.classList.add("newTaskContainer");
 
+    const newTaskButton = document.createElement("button");
+    newTaskButton.classList.add("newTaskButton");
+    newTaskButton.style.display = "block"
+    newTaskButton.textContent = "Nova Tarefa"
+    newTaskButton.onclick = function(){
+      newTaskButtonAction(this);
+    }
+  
+    const newTaskConfirmContainer = document.createElement("div");
+    newTaskConfirmContainer.classList.add("newTaskConfirmContainer");
+    newTaskConfirmContainer.style.display = "none";
 
+    const newTaskInput = document.createElement("input");
+    newTaskInput.classList.add("newTaskInput");
 
+    newTaskInput.type = "text";
+    newTaskInput.placeholder = "Insira o nome da task";
+
+    const newTaskButtonContainer = document.createElement("div");
+    newTaskButtonContainer.classList.add("newTaskButtonContainer");
+
+    const newTaskBackButton = document.createElement("button");
+    newTaskBackButton.classList.add("newTaskBackButton");
+    newTaskBackButton.textContent = "Voltar";
+    newTaskBackButton.onclick = function(){
+      newTaskButtonBack(this);
+    }
+
+    const newTaskConfirmButton = document.createElement("button");
+    newTaskConfirmButton.classList.add("newTaskConfirmButton");
+    newTaskConfirmButton.textContent = "Confirmar"
+    newTaskConfirmButton.onclick = function(){
+      newTaskButtonConfirm(this);
+    }
+
+    newTaskInput.addEventListener("keyup", ({key}) => {
+      if (key === "Enter") {
+        
+        newTaskButtonConfirm(newTaskConfirmButton);
+      }
+      })
 
     column.appendChild(columnHeader);
+    column.appendChild(newTaskContainer)
     columnHeader.appendChild(columnNameContainer);
 
     columnNameContainer.appendChild(columnName);
@@ -165,11 +207,17 @@ function newColumnButtonAction() {
     columnRenameContainer.appendChild(confirmRenameButton);
     confirmRenameButton.appendChild(confirmRenameIcon);
 
-    
+    newTaskContainer.appendChild(newTaskButton);
+    newTaskContainer.appendChild(newTaskConfirmContainer);
+
+    newTaskConfirmContainer.appendChild(newTaskInput);
+    newTaskConfirmContainer.appendChild(newTaskButtonContainer);
+
+    newTaskButtonContainer.appendChild(newTaskBackButton);
+    newTaskButtonContainer.appendChild(newTaskConfirmButton);
+
 
     content.insertBefore(column,newColumnContainer);
-
-
 
     newColumnButtonBack();
   }
@@ -187,7 +235,7 @@ function renameButtonDisplay(el){
   const columnRenameContainer  = columnDeleteContainer.nextSibling;
 
   columnNameContainer.style.display =
-  columnNameContainer.style.display === "block" ? "none" : "block";
+  columnNameContainer.style.display === "flex" ? "none" : "flex";
 
   columnDeleteContainer.style.display =
   columnDeleteContainer.style.display === "block" ? "none" : "block";
@@ -203,7 +251,7 @@ function renameCancelButton(el){
   const columnNameContainer = columnDeleteContainer.previousSibling
 
   columnNameContainer.style.display =
-  columnNameContainer.style.display === "none" ? "block" : "none";
+  columnNameContainer.style.display === "none" ? "flex" : "none";
 
 
   columnDeleteContainer.style.display =
@@ -225,8 +273,7 @@ function renameConfirmButton(el){
     alert("vtnc tario kk");
     return;
   }else{
-    columnName.innerHTML = renameInput.value; 
-    console.log(renameInput.value)
+    columnName.textContent = renameInput.value; 
   }
   
   renameCancelButton(renameCancellButton);
@@ -245,4 +292,45 @@ function deleteColumn(el){
     return;
   }
 
+}
+function newTaskButtonBack(el) {
+  const newTaskButtonBack = el;
+  const newTaskButtonContainer = newTaskButtonBack.parentNode;
+  const newTaskConfirmContainer = newTaskButtonContainer.parentNode;
+  const newTaskInput = newTaskConfirmContainer.firstChild
+  const newTaskButton = newTaskConfirmContainer.previousSibling;
+
+  newTaskButton.style.display =
+  newTaskButton.style.display === "none" ? "block" : "none";
+
+  newTaskConfirmContainer.style.display = newTaskConfirmContainer.style.display = "none";
+  newTaskInput.value = ""
+
+}
+
+function newTaskButtonConfirm(el){
+  const newTaskButtonConfirm = el;
+  const newTaskInput = newTaskButtonConfirm.parentNode.previousSibling;
+  const newTaskContainer = newTaskButtonConfirm.parentNode.parentNode.parentNode
+  const column = newTaskContainer.parentNode;
+  console.log(column)
+  
+  const taskContainer = document.createElement("div");
+  taskContainer.classList.add("taskContainer");
+
+  const taskTitle = document.createElement("span");
+  taskTitle.classList.add("taskTitle");
+
+  if(newTaskInput.value == "" || newTaskInput.value.length > 23){
+    alert("vtnc tario kk");
+    return;
+  }else{
+    taskTitle.textContent = newTaskInput.value; 
+  }
+
+
+taskContainer.appendChild(taskTitle);
+column.insertBefore(taskContainer,newTaskContainer)
+
+  newTaskButtonBack(newTaskButtonConfirm.previousSibling);
 }

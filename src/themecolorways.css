@@ -3,6 +3,7 @@
     --dark-theme-color-2: #1f2223; /* HOVER*/
     --dark-theme-color-3: #282b2b; /* BACKGROUND DROPDOWN */
     --dark-theme-color-4: #02429C;
+    --dark-theme-color-5: #252627; /*input color */
 
     --light-theme-color-1: #f6f8fa; /* BACKGROUND HEADER */
     --light-theme-color-2: #f4f6f8; /* BACKGROUND DROPDOWN */
@@ -15,7 +16,9 @@
 
   /* CORES  DARK*/
   /* NAV */
-.dark nav {
+
+
+.dark nav, .dark body {
     background-color: var(--dark-theme-color-1);
   }
   .dark nav strong {
@@ -46,10 +49,10 @@
   .dark .column i {
     color: azure;
   }
-  .dark .renameInput, .dark .newColumnInput{
+  .dark .renameInput, .dark .newColumnInput, .dark .newTaskInput{
     border:none;
     outline-color: var(--dark-theme-color-4);
-    background: var(--dark-theme-color-3);
+    background:  var(--dark-theme-color-5);
     color: white;
 
   }
@@ -60,12 +63,12 @@
   .dark .newColumnConfirmContainer{
     background-color: var(--dark-theme-color-1);
   }
-  .dark .newColumnButton{
+  .dark .newColumnButton, .dark .newTaskButton{
     background-color: var(--dark-theme-color-1);
     opacity: 93%;
     color: white
   }
-  .dark .newColumnButton:hover{
+  .dark .newColumnButton:hover, .dark .newTaskButton{
     background-color: var(--dark-theme-color-3);
     opacity: 100%;
   }
@@ -75,10 +78,18 @@
     color: white
   }
   .dark .newColumnConfirmButton:hover, .dark .newColumnBackButton:hover, .dark .newTaskBackButton:hover, .dark .newTaskConfirmButton:hover{
-    background-color: var(--dark-theme-color-3);
+    background-color: var(--dark-theme-color-5);
     opacity: 100%;
 }
- 
+.dark .taskContainer{
+    background-color: var(--dark-theme-color-5);
+}
+ .dark .taskContainer:hover{
+    border-style:solid;
+    border-width: 2px;
+    border-color: var(--dark-theme-color-4);
+
+ }
   /* CORES  WHITE*/
     /* NAV */
   nav {
@@ -113,10 +124,14 @@
   .column i {
     color:var(--light-theme-color-5);
   }
-  .renameInput, .newColumnInput{
+  .renameInput, .newColumnInput, .newTaskInput{
     border:none;
     outline-color: var(--light-theme-color-6);
     background: white;
+
+  }
+  .cancelRenameButton, .confirmRenameButton, .renameColumnButton, .deleteColumnButton {
+    background-color: var(--light-theme-color-2);
 
   }
   .cancelRenameButton:hover, .confirmRenameButton:hover, .renameColumnButton:hover, .deleteColumnButton:hover {
@@ -139,5 +154,13 @@
   .newColumnConfirmButton:hover, .newColumnBackButton:hover, .newTaskBackButton:hover,.newTaskConfirmButton:hover{
     background-color: var(--light-theme-color-3);
     opacity: 100%;
-
 }
+.taskContainer{
+    background-color: var(--light-theme-color-3);
+}
+ .taskContainer:hover{
+    border-style:solid;
+    border-width: 2px;
+    border-color: var(--light-theme-color-6);
+
+ }
