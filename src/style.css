@@ -48,15 +48,20 @@ nav strong {
 .dropbtn:hover {
   cursor: pointer;
 }
+.containerMenu{
+  position: relative;
+}
 .menuDrop {
   border-radius: 5px;
   height: 8.76em;
   width: 15em;
-  right: 7em;
-  position: absolute;
   box-sizing: border-box;
   display: none;
   box-shadow: rgba(0, 0, 0, 0.12) 2.4px 2.4px 3.2px;
+  top: 3em;
+  bottom: 0px;
+  position: absolute;
+  right: 0px;
 }
 .optionsDrop ul,
 .selectThemeOption ul {
