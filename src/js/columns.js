@@ -6,47 +6,52 @@ import {
   savingOnLocalStorage
 } from './storage.js';
 
-
-
- window.createNewColumn = function(){
+ window.createNewColumn = function(columnId, columnTitle){
 
     let content = document.querySelector("#content");
     let newColumnContainer = document.querySelector("#newColumnContainer");
-    const newColumnInput = document.querySelector("#newColumnInput")
+    const newColumnInput = document.querySelector("#newColumnInput");
+    let newColumn = false;
 
-    let newColumnInputValue = newColumnInput.value;
-    if(newColumnInput.value == "" || newColumnInput.value.length > 23){
-      alert("vtnc tario kk");
-      return;
+    if (columnTitle === undefined){
+       columnTitle = newColumnInput.value;
+        newColumn = true;
+      if(newColumnInput.value == "" || newColumnInput.value.length > 23){
+        alert("vtnc tario kk");
+        return;
+      }
     }
+ 
     const column = document.createElement("div");
     column.classList.add("column");
-    let columnId = `column-Id-${Date.now()}`;
+
+    if(columnId === undefined){
+    columnId = `column-Id-${Date.now()}`;
+    }
     column.id = columnId;
 
-    let columnHeader = creatingColumnHeader(newColumnInputValue);
+    let columnHeader = creatingColumnHeader(columnTitle);
     let newTaskContainer = creatingColumnNewTask();
     column.appendChild(columnHeader);
     column.appendChild(newTaskContainer)
 
 
 
-    content.insertBefore(column,newColumnContainer);
-    
+     content.insertBefore(column,newColumnContainer);
 
-
-      // saving IN A OBJ
-      mainObj.push(savingColumnObj(column.id,newColumnInput.value, mainObj))
+      if (newColumn === true){
+        newColumnBack();
+        newColumnInput.value = "";
+      }
        
-      console.log(mainObj)
+      savingColumnObj(columnId,columnTitle,mainObj)
       savingOnLocalStorage(mainObj);
 
-      newColumnInput.value = "";
-    newColumnBack();
+    
   }
 
 
-  window.creatingColumnHeader = function(newColumnInputValue){
+  window.creatingColumnHeader = function(columnTitle){
 
     // criando os elementos
     const columnHeader = document.createElement("div");
@@ -73,7 +78,7 @@ import {
 
     const columnName = document.createElement("span");
     columnName.classList.add("columnName");
-    columnName.textContent = newColumnInputValue;
+    columnName.textContent = columnTitle;
 
     const renameColumnButton = document.createElement("button");
     renameColumnButton.classList.add("renameColumnButton");
@@ -315,7 +320,6 @@ let deleteButton = el;
 let columnDeleteContainer = deleteButton.parentNode;
 let column = columnDeleteContainer.parentNode.parentNode
 let columnId = column.id;
-console.log(columnId)
 if(confirm("certeza?kk") == true){
 
   content.removeChild(column);
@@ -324,7 +328,6 @@ if(confirm("certeza?kk") == true){
   mainObj.splice(mainObj.findIndex(v => v.id === columnId), 1);
 
   savingOnLocalStorage(mainObj);
-  console.log(mainObj)
 }else{
   return;
 }

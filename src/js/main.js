@@ -1,3 +1,6 @@
+import{
+  loadLocalStorage
+} from './storage.js'
 export{mainObj}
 let mainObj = [];
 
@@ -8,3 +11,7 @@ newColumnInput.addEventListener("keyup", ({key}) => {
     createNewColumn();
   }
   })
+
+  const loadPage = document.addEventListener('DOMContentLoaded', function() {
+    loadLocalStorage(mainObj)
+  }, false);

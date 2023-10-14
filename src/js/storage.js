@@ -1,12 +1,13 @@
-export {savingColumnObj,savingOnLocalStorage, savingTaskObj};
-function savingColumnObj(columnId, columnTitle){
+export {savingColumnObj,savingOnLocalStorage, savingTaskObj, loadLocalStorage};
 
+
+function savingColumnObj(columnId, columnTitle, mainObj){
     let columnObj = {
-        id: columnId,
+        id: columnId, 
         title: columnTitle,
         tasks: [],
       }
-    return columnObj;
+      mainObj.push(columnObj);
   }
 
 function savingOnLocalStorage(mainObj){
@@ -27,7 +28,16 @@ function savingTaskObj(columnId,taskId,taskTitle,mainObj){
         mainObj.tasks.push(taskObj);
       }
     })
-    console.log(mainObj);
   }
   
-  
+  function loadLocalStorage(mainObj){
+    mainObj = JSON.parse(localStorage.getItem("mainData"));
+    mainObj.forEach(function(mainObj){
+      createNewColumn(mainObj.id,mainObj.title);
+
+
+      mainObj.tasks.forEach(function(mainObjTask){
+        newTaskConfirm(undefined,mainObj.id,mainObjTask.id,mainObjTask.title);
+      })
+      })
+  }

@@ -1,3 +1,4 @@
+
 import {
   mainObj,
 } from './main.js';
@@ -5,7 +6,6 @@ import {
   savingOnLocalStorage,
   savingTaskObj,
 } from './storage.js';
-
 
 // funçoes para CRIAR nova tarefa
 window.newTaskDisplay = function(el) {
@@ -33,39 +33,52 @@ window.newTaskDisplay = function(el) {
 
 }
 
-window.newTaskConfirm = function(el){
-  const newTaskButtonConfirm = el;
-  const newTaskInput = newTaskButtonConfirm.parentNode.previousSibling;
-  const newTaskContainer = newTaskButtonConfirm.parentNode.parentNode.parentNode
-  const column = newTaskContainer.parentNode;
-  const columnId = column.id;
-  
+ window.newTaskConfirm = function(el,columnId,taskId,taskName){
+  let newTask = false;
+  let column;
+  let newTaskInput;
+  let newTaskButtonConfirm;
+  let newTaskContainer;
+    if (el != undefined){ // vendo se está sendo criada uma nova task tlgd rsrs kk
+      newTask = true;
+    }
 
   const taskContainer = document.createElement("div");
   taskContainer.classList.add("taskContainer");
-  taskContainer.id = `task-id-${Date.now()}`;
 
   const taskTitle = document.createElement("span");
   taskTitle.classList.add("taskTitle");
-
+  if(newTask === true){
+     newTaskButtonConfirm = el;
+    newTaskInput = newTaskButtonConfirm.parentNode.previousSibling;
+    newTaskContainer = newTaskButtonConfirm.parentNode.parentNode.parentNode
+    column = newTaskContainer.parentNode;
+    
+      columnId = column.id;
+      taskId = `task-id-${Date.now()}`;
+      taskName = newTaskInput.value;
+    
   if(newTaskInput.value == "" || newTaskInput.value.length > 23){
     alert("vtnc tario kk");
     return;
-  }else{
-    taskTitle.textContent = newTaskInput.value; 
+  }}
+  else{
+    column = document.getElementById(columnId);
+    newTaskContainer = column.firstChild.nextSibling;
   }
+
+taskTitle.textContent = taskName;
+taskContainer.id = taskId;
 
 
 taskContainer.appendChild(taskTitle);
 column.insertBefore(taskContainer,newTaskContainer)
 
-
-// salvando no obj
-savingTaskObj(columnId, taskContainer.id,newTaskInput.value,mainObj);
-savingOnLocalStorage(mainObj);
-
-
+if(newTask == true){
   newTaskBack(newTaskButtonConfirm.previousSibling);
+}
+savingTaskObj(columnId,taskId,taskName,mainObj);
+savingOnLocalStorage(mainObj);
 }
 
 
