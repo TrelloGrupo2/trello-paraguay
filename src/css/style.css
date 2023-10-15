@@ -171,9 +171,28 @@ p {
   color: black;
 }
 .botaos{
-  border-radius: 20px;
-  background-color: aquamarine;
+  border-radius: 2px; 
+  background-color: rgb(67, 14, 151);
+   box-shadow: 0 0 0 0;
+   border: 0 none;
+   outline: 0;
+   display: block;
+   /* text-align: center; */
+   margin-bottom: 2.2px;
+   align-self: flex-end;
+   z-index: 10;
+   margin-left: 83%;
+   margin-top:3px;
 }
-#botao1{
-  background-color: aqua;
+.botaos:hover{
+  background-color:rgb(44, 10, 100);
+}
+#adicionar{
+  margin-left: 83%;
+}
+#descricaoText{
+  z-index: 15;
+  margin-left: 30px;
+  width: 600px;
+  height: 200px;
 }

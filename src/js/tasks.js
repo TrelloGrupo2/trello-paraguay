@@ -36,6 +36,7 @@ window.newTaskDisplay = function(el) {
 }
 
  window.newTaskConfirm = function(el,columnId,taskId,taskName){
+
   let newTask = false;
   let column;
   let newTaskInput;
@@ -50,9 +51,11 @@ window.newTaskDisplay = function(el) {
 
   const taskTitle = document.createElement("span");
   taskTitle.classList.add("taskTitle");
+  // console.log(taskTitle);
 
   taskContainer.addEventListener("click", function() {
-    newModal(taskNumber);
+    newModal(taskNumber,taskName,columnId,taskId);
+    description (taskId);
  //  alert("vasnh");
 }); 
 taskNumber++;
@@ -65,8 +68,21 @@ taskNumber++;
     
       columnId = column.id;
       taskId = `task-id-${Date.now()}`;
+      // taskId = taskNumber;
+      console.log(taskNumber);
       taskName = newTaskInput.value;
-    
+      console.log(taskName);
+
+    //    if(!mainObj[columnId]){
+    //     mainObj[columnId] = {};
+    //    }
+    //  mainObj[columnId][taskId] = {
+    //    name: taskName,
+    //    description: newTaskInput.value,
+    //  } ;
+
+    // const description = getTaskDescription(columnId,taskId);
+
   if(newTaskInput.value == "" || newTaskInput.value.length > 23){
     alert("vtnc tario kk");
     return;
@@ -76,8 +92,9 @@ taskNumber++;
     newTaskContainer = column.firstChild.nextSibling;
   }
 
-taskTitle.textContent = taskName;
+ taskTitle.textContent = taskName;
 taskContainer.id = taskId;
+// console.log(taskContainer.id);
 
 
 taskContainer.appendChild(taskTitle);
@@ -104,8 +121,8 @@ let botao2;
 let botao3;
 let botaos;
 
-function newModal (taskNumber){
-  console.log(34);
+function newModal (taskNumber,taskName,columnId,taskId){
+  // console.log(34);
 
   divBackground = document.createElement("div");
   divBackground.className = "background";
@@ -124,7 +141,8 @@ function newModal (taskNumber){
 
   titulo = document.createElement("h2");
   titulo.id = "modalTitle";
-   titulo.innerHTML = "titulo(q deveria ser o nome da task)";
+   titulo.innerHTML = taskName;
+  //  titulo.innerHTML = "titulo(q deveria ser o nome da task)";
   divSecundaria.appendChild(titulo);
 
   listaColuna = document.createElement("p");
@@ -136,34 +154,75 @@ function newModal (taskNumber){
   descricao.innerHTML = "Descricao";
   divSecundaria.appendChild(descricao);
 
-  descricaoText = document.createElement("textarea");
-  descricaoText.id = "descricaoText";
-  divSecundaria.appendChild(descricaoText);
-
   adicionar = document.createElement("p");
   adicionar.id = "adicionar";
   adicionar.innerHTML = "Adicionar à tarefa";
   divSecundaria.appendChild(adicionar);
 
-  botaos = document.createElement("div");
-  botaos.className = "botaos";
-  // botaos.id = "modalContent";
-  divPrincipal.appendChild(botaos);
-
   botao1 = document.createElement("button");
-  botao1.id = "botao1";
+  botao1.className = "botaos";
   botao1.innerHTML = "Checklist";
   divSecundaria.appendChild(botao1);
 
   botao2 = document.createElement("button");
-  botao2.id = "botao2";
+  botao2.className = "botaos";
   botao2.innerHTML = "Datas";
   divSecundaria.appendChild(botao2);
 
   botao3 = document.createElement("button");
-  botao3.id = "botao3";
+  botao3.className = "botaos";
+  botao3.id = "botao3"
   botao3.innerHTML = "Anexos";
   divSecundaria.appendChild(botao3);
+
+  descricaoText = document.createElement("textarea");
+  descricaoText.id = "descricaoText";
+  divSecundaria.appendChild(descricaoText);
+
+  // description(taskId);
+
+  function description (taskId){ 
+
+    const descricaoText = document.getElementById('descricaoText-${taskId}')
+  const updateLS = () => {
+    localStorage.setItem('descricaoText-${taskId}',descricaoText.value);
+  }
+
+  // Para carregar a descrição do armazenamento local quando necessário:
+const conteudoArmazenado = localStorage.getItem('descricaoText-${taskId}');
+if (conteudoArmazenado) {
+  descricaoText.value = conteudoArmazenado;
+}
+
+// Adicione um ouvinte de eventos para salvar sempre que o usuário digitar na textarea:
+   descricaoText.addEventListener('input', updateLS);
+} 
+
+  // updateLS();
+  // const conteudoArmazenado = localStorage.getItem('conteudo');
+  // descricaoText.value = conteudoArmazenado;
+
+  // descricaoText.addEventListener('input', function(){
+  //   localStorage.setItem('conteudo',descricaoText.value)
+  // })
+
+  // const taskDescription = getTaskDescription(columnId,taskNumber);
+  // descricaoText.value = taskDescription;
+
+  // taskContainer.appendChild(taskTitle);
+  // taskContainer.appendChild(inputDescription);
+  // column.insertBefore(taskContainer, newTaskContainer);
+
+  // const taskDescription = mainObj[taskNumber]?.description;
+  // descricaoText.value = taskDescription || '';
+  // const taskDescription = mainObj[columnId] && mainObj[columnId][taskNumber] && mainObj[columnId][taskNumber].description;
+  // descricaoText.value = taskDescription || '';
+
+  // descricaoText.innerHTML = conteudoArmazenado;
+  // divSecundaria.appendChild(descricaoText);
+
+  // titulo.innerHTML = taskTitle;
+
 
  
   divBackground.addEventListener('click', function (event) {
@@ -172,9 +231,17 @@ function newModal (taskNumber){
       }
   });
 
-   const titleElement = document.getElementById("taskTitle");
-    titleElement.textContent = "tarefa" + taskNumber;
-    // titulo.innerHTML = titleElement;
+  // const taskDiv = document.createElement('div');
+  // taskDiv.style.display = 'none';
+
+
+  // Recuperar o conteúdo da textarea do LocalStorage
+// const conteudoArmazenado = localStorage.getItem('conteudo');
+// document.getElementById('suaTextarea').value = conteudoArmazenado;
+
+// const titleElement = document.getElementById("modalTitle");
+//     // console.log(input);
+//      titleElement.textContent = input;
 }
 
 function closeModal() {
@@ -182,6 +249,8 @@ function closeModal() {
   // divBackground = null;
 }
 
-
+// function getTaskDescription(columnId,taskId){
+//   return mainObj[columnId]?.[taskId]?.description || '';
+// }
 
 
