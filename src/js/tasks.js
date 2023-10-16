@@ -178,6 +178,47 @@ function newModal (taskNumber,taskName,columnId,taskId){
   descricaoText = document.createElement("textarea");
   descricaoText.id = "descricaoText";
   divSecundaria.appendChild(descricaoText);
+  
+  // Função para abrir o modal
+function openModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+
+  // Define um evento para o botão de salvar
+  document.getElementById("saveDescriptionButton").addEventListener("click", saveDescription);
+}
+
+// Função para salvar a descrição no localStorage
+function saveDescription() {
+  var description = document.getElementById("descriptionInput").value;
+
+  // Verifique se a descrição não está vazia
+  if (description.trim() === "") {
+    alert("A descrição não pode estar em branco!");
+    return;
+  }
+
+  localStorage.setItem("userDescription", description);
+
+  closeModal();
+}
+
+// Função para fechar o modal
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+// Event listener para abrir o modal quando o botão é clicado
+document.getElementById("openModalButton").addEventListener("click", openModal);
+
+// Fechar o modal se o usuário clicar fora da área do modal
+window.addEventListener("click", function(event) {
+  var modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    closeModal();
+  }
+});
 
   // description(taskId);
 
