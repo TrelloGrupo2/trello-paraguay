@@ -120,6 +120,7 @@ let botao1;
 let botao2;
 let botao3;
 let botaos;
+let botaoSalva;
 
 function newModal (taskNumber,taskName,columnId,taskId){
   // console.log(34);
@@ -175,6 +176,11 @@ function newModal (taskNumber,taskName,columnId,taskId){
   botao3.innerHTML = "Anexos";
   divSecundaria.appendChild(botao3);
 
+  botaoSalva = document.createElement("button");
+  botaoSalva.className = "botaoSalva";
+  botaoSalva.id = "botaoSalva"
+  botaoSalva.innerHTML = "Salvar";
+
   descricaoText = document.createElement("textarea");
   descricaoText.id = "descricaoText";
   divSecundaria.appendChild(descricaoText);
@@ -184,20 +190,14 @@ function openModal() {
   var modal = document.getElementById("myModal");
   modal.style.display = "block";
 
-  // Define um evento para o botão de salvar
+ 
   document.getElementById("saveDescriptionButton").addEventListener("click", saveDescription);
 }
 
 // Função para salvar a descrição no localStorage
 function saveDescription() {
   var description = document.getElementById("descriptionInput").value;
-
-  // Verifique se a descrição não está vazia
-  if (description.trim() === "") {
-    alert("A descrição não pode estar em branco!");
-    return;
-  }
-
+  
   localStorage.setItem("userDescription", description);
 
   closeModal();
