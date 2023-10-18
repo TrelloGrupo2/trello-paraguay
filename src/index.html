@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/content.css" />
   <link rel="stylesheet" href="./css/themecolorways.css" />
+  <link rel="stylesheet" href="./css/modal.css"/>
 
 </head>
 <body class="body" id="body">
@@ -85,6 +86,33 @@
       <!-- </form>-->
     </div> 
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="title-modal"></h2>
+      <span class="close">&times;</span>
+    </div>
+  <div class="modal-container">
+        <div class="">
+          <div class="modal-values">
+            <input 
+              class="modal-description" 
+              placeholder="Adicione uma descrição detalhada" 
+              type="text"/>
+          </div>
+          <div class="modal-info">
+            <button>Checklist</button>
+            <button>Datas</button>
+            <button>Anexos</button>
+          </div>  
+        </div>
+    </div>
+  </div>
+
+</div>
   </section> 
 
 </div>
@@ -95,6 +123,6 @@
 <script src="./js/tasks.js" type="module" defer></script>
 <script src="./js/columns.js" type="module" defer></script>
 <script src="./js/main.js" type="module" defer></script>
-
+<script src="./js/modal.js" type="module" defer></script>
 
 </html>

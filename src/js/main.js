@@ -1,7 +1,7 @@
-import{
+import {
   loadLocalStorage
-} from './storage.js'
-export{mainObj}
+} from './storage.js';
+export { mainObj };
 let mainObj = [];
 
 
