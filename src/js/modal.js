@@ -19,10 +19,21 @@ let taskDescription = document.querySelector(".modal-description");
 let tasksId;
 
 export const showModal = (props, taskId) => {
-  tasksId = taskId;
+  let description = document.querySelector(".modal-description");
   let title = document.querySelector(".title-modal");
-  title.textContent = props;
   let modal = document.querySelector("#myModal");
+
+  mainObj.forEach((mainObj) => { // pegando a descriçao certa
+    mainObj.tasks.forEach((mainObjTask) => {
+      if (mainObjTask.id === taskId)
+      description.value = mainObjTask.description;
+    return;
+    });
+  });
+
+  tasksId = taskId;
+  title.textContent = props;
+ 
   modal.style.display = "block";
 };
 
