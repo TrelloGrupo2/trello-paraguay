@@ -17,17 +17,21 @@
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: #f0f0f0;
-    margin: 15% auto;
+    /* margin: 15% auto; */
     /* 15% from the top and centered */
     padding: 20px;
+   /* justify-content: center; */
     border: 1px solid #888;
-    width: 70%;
+    width: 700px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     /* Could be more or less, depending on screen size */
@@ -39,6 +43,7 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-right: 13px;
 }
 
 .close:hover,
@@ -57,12 +62,13 @@
 
 .modal-values {
     width: 70%;
+    flex: 1;
 }
 
 .modal-info {
-    width: 10%;
+    width: 18%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .modal-header {
@@ -70,4 +76,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.title-modal{
+    font-size: 40px;
+    margin-left: 7px;
+}
+.modal-description{
+    /* margin-top: 30px; */
+    width: 300px;
+    height: 150px;
+    padding-left: 0.5em;
+    /* display: flex; */
+}
+
+.modal-info button{
+    margin-top: 3px;
+    margin-right: 12px;
+    border-radius: 4px;
+    border:1.7px solid black;
+}
+
+.modal-info button:hover {
+    background-color: rgb(126, 125, 125) ;
 }
