@@ -117,24 +117,24 @@
 
   /* CONTENT */
 
-  .column, .newColumnConfirmContainer{
+  .column, .newColumnConfirmContainer, .modal-content{
   
     background-color: var(--light-theme-color-1);
   }
   .column i {
     color:var(--light-theme-color-5);
   }
-  .renameInput, .newColumnInput, .newTaskInput{
+  .renameInput, .newColumnInput, .newTaskInput, .renameTaskInput{
     border:none;
     outline-color: var(--light-theme-color-6);
     background: white;
 
   }
-  .cancelRenameButton, .confirmRenameButton, .renameColumnButton, .deleteColumnButton {
+  .cancelRenameButton, .confirmRenameButton, .renameColumnButton, .deleteColumnButton{
     background-color: var(--light-theme-color-2);
 
   }
-  .cancelRenameButton:hover, .confirmRenameButton:hover, .renameColumnButton:hover, .deleteColumnButton:hover {
+  .cancelRenameButton:hover, .confirmRenameButton:hover, .renameColumnButton:hover, .deleteColumnButton:hover{
 
     background-color: var(--light-theme-color-3);
   }
@@ -162,5 +162,7 @@
     border-style:solid;
     border-width: 2px;
     border-color: var(--light-theme-color-6);
-
+ }
+ .modalContent{
+  background-color: var(--light-theme-color-1);
  }

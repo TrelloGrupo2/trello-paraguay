@@ -15,3 +15,10 @@ newColumnInput.addEventListener("keyup", ({key}) => {
   const loadPage = document.addEventListener('DOMContentLoaded', function() {
     loadLocalStorage(mainObj)
   }, false);
+
+  const renameTaskInput = document.querySelector(".renameTaskInput");
+  renameTaskInput.addEventListener("keyup", ({key}) => {
+  if (key === "Enter") {
+    taskRename();
+  }
+  })

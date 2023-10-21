@@ -3,7 +3,6 @@ import { savingOnLocalStorage, savingTaskObj } from "./storage.js";
 
 import { showModal } from "./modal.js";
 
-var taskNumber = 0;
 
 // funçoes para CRIAR nova tarefa
 window.newTaskDisplay = function (el) {
@@ -47,8 +46,8 @@ window.newTaskConfirm = function (el, columnId, taskId, taskName, taskDescValue)
 
   const taskTitle = document.createElement("span");
   taskTitle.classList.add("taskTitle");
+  
 
-  taskNumber++;
 
   let taskDescription = document.querySelector(".modal-description");
   
@@ -61,7 +60,7 @@ window.newTaskConfirm = function (el, columnId, taskId, taskName, taskDescValue)
     column = newTaskContainer.parentNode;
 
     columnId = column.id;
-    taskId = `task-id-${Date.now()}`;
+    taskId = `${Date.now()}`;
     taskName = newTaskInput.value;
     taskDescValue = '';
 
@@ -74,6 +73,7 @@ window.newTaskConfirm = function (el, columnId, taskId, taskName, taskDescValue)
     newTaskContainer = column.firstChild.nextSibling;
   }
 
+  taskTitle.id = `task-name-${taskId}`;
   taskTitle.textContent = taskName;
   taskContainer.id = taskId;
   taskDescription.value = taskDescValue;
