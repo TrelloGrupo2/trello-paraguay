@@ -23,7 +23,9 @@ export const showModal = (props, taskId) => {
   let title = document.querySelector(".title-modal");
   let modal = document.querySelector("#myModal");
 
-  mainObj.forEach((mainObj) => { // pegando a descriçao certa
+  cancelTaskRename();
+  
+    mainObj.forEach((mainObj) => { // pegando a descriçao certa
     mainObj.tasks.forEach((mainObjTask) => {
       if (mainObjTask.id === taskId)
       description.value = mainObjTask.description;
@@ -41,7 +43,6 @@ export const showModal = (props, taskId) => {
 span.onclick = function () {
   modal.style.display = "none";
   saveDescriptionObj();
-  console.log(mainObj);
 };
 
 const saveDescriptionObj = () => {
@@ -59,7 +60,6 @@ window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
     saveDescriptionObj();
-    console.log(mainObj);
   }
 };
 
@@ -68,11 +68,9 @@ window.cancelTaskRename = function(){
   let taskNameContainer = document.querySelector(".taskNameContainer");
   let taskRenameContainer = document.querySelector(".taskRenameContainer");
 
-taskNameContainer.style.display =
-taskNameContainer.style.display === "none" ? "flex" : "none";
+taskNameContainer.style.display = "flex" 
 
-taskRenameContainer.style.display =
-taskRenameContainer.style.display === "block" ? "none" : "block";
+taskRenameContainer.style.display = "none" 
 }
 window.displayTaskRename = function(){
   let taskNameContainer = document.querySelector(".taskNameContainer");
@@ -125,7 +123,8 @@ window.taskDelete = function(){
 }
 });
 savingOnLocalStorage(mainObj);
-  }else{
+modal.style.display = "none";
+}else{
     return
   }
 }

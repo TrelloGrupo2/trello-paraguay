@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="body" id="body">
+<body class="dark body" id="body">
   <!-- Navigation Bar Start-->
   <header>
     <nav class="navbar">
@@ -25,7 +25,7 @@
 
 
         <div class="containerMenu">
-          <button href="#" class="dropbtn" onclick="displayMenuDrop()">
+          <button href="#" class="dropbtn icon-button" onclick="displayMenuDrop()">
             <i class="fa-sharp fa-solid fa-bars"></i>
           </button>
 
@@ -49,14 +49,14 @@
                   <i class="fa-solid fa-sun"></i>
                   <a class="noDecoration">Tema claro</a>
                   <div class="checkTheme">
-                    <i id="lightCheck" class="fa-solid fa-check" style="display:flex"></i>
+                    <i id="lightCheck" class="fa-solid fa-check" style="display:none"></i>
                   </div>
                 </li>
                 <li onclick="changingThemeToDark()">
                   <i class="fa-solid fa-moon"></i>
                   <a class="darkTheme">Tema escuro</a>
                   <div class="checkTheme">
-                    <i id="darkCheck" class="fa-solid fa-check" style="display:none"></i>
+                    <i id="darkCheck" class="fa-solid fa-check" style="display:flex"></i>
                   </div>
                 </li>
               </ul>
@@ -72,11 +72,12 @@
   </header>
   <!-- Navigation Bar End -->
 
-  <section class="content" id="content">
+  <section class="board" >
+  <div class="content" id="content">
 
     <div class="newColumnContainer" id="newColumnContainer">
       <!--<form action="#">-->
-      <button class="newColumnButton" id="newColumnButton" style="display:block" onclick="newColumnDisplay()"> Nova
+      <button class="newColumnButton button" id="newColumnButton" style="display:block" onclick="newColumnDisplay()"> Nova
         coluna </button>
       <div class="newColumnConfirmContainer" id="newColumnConfirmContainer" style="display:none">
         <input type="text" placeholder="Insira o nome da coluna" class="newColumnInput" id="newColumnInput""> 
@@ -97,19 +98,19 @@
 
           <div class="taskNameContainer" style="display:flex">
             <h2 class="title-modal"></h2>
-            <button class="renameTaskButton" onclick="displayTaskRename()">
+            <button class="renameTaskButton button" onclick="displayTaskRename()">
               <i class="fa-solid fa-pen"></i>
             </button>
-            <button class="deleteTaskButton" onclick="taskDelete()">
+            <button class="deleteTaskButton button" onclick="taskDelete()">
               <i class="fa-solid fa-trash"></i>
             </button>
           </div>
 
           <div class="taskRenameContainer" style="display:none" >
-          <input class="renameTaskInput" type="text" placeholder="Insira o nome da tarefa">
-          <button class="cancelRenameButton" onclick="cancelTaskRename()">
+          <input class="renameTaskInput input" type="text" placeholder="Insira o nome da tarefa">
+          <button class="cancelRenameButton button" onclick="cancelTaskRename()">
             <i class="fa-solid fa-xmark"></i></button>
-          <button class="confirmRenameButton" onclick="taskRename()">
+          <button class="confirmRenameButton button" onclick="taskRename()">
             <i class="fa-solid fa-check"></i></button>
           </div>
           
@@ -127,14 +128,15 @@
             </textarea>
           </div>
           <div class="modal-info">
-            <button>Checklist</button>
-            <button>Datas</button>
-            <button>Anexos</button>
+            <button class="button">Checklist</button>
+            <button class="button">Datas</button>
+            <button class="button">Anexos</button>
           </div>
         </div>
       </div>
 
     </div>
+  </div>
   </section>
 
   </div>

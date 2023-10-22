@@ -24,11 +24,7 @@
 /* Modal Content/Box */
 .modal-content {
     border-radius: 15px;
-    background-color: #f0f0f0;
-    /* margin: 15% auto; */
-    /* 15% from the top and centered */
     padding: 20px;
-   /* justify-content: center; */
     border: 1px solid #888;
     width: 700px;
     height: 400px;
@@ -79,15 +75,15 @@
 }
 .title-modal{
     font-size: 40px;
-    margin-left: 7px;
+    margin: 0 10px;
 }
 .modal-description{
     resize: none;
     display: flex;
     border-radius: 5px;
     border-style: none;
+    outline: #1a1818 solid 1px;
     padding: 5px;
-    border: 1px solid;
     margin-top: 10px;
     width: 350px;
     height: 130px;
@@ -97,16 +93,13 @@
     margin-top: 3px;
     margin-right: 12px;
     border-radius: 4px;
-    border:1.7px solid black;
+    border:1.7px solid #1a1818;
     height: 30px;
     cursor: pointer;
 }
 
-.modal-info button:hover {
-    background-color: rgb(126, 125, 125) ;
-}
-
 .deleteTaskButton, .renameTaskButton {
+    margin-top: 5px;
     background-color: transparent;
     border-radius: 50%;
     border-style: none;
@@ -118,13 +111,6 @@
     justify-content: center;
     align-items: center;
     opacity: 80%;
-    margin-left: 0.3em;
-}
-.deleteTaskButton:hover, .renameTaskButton:hover {
-    opacity: 100%;   
-}
-.deleteTaskButton i:hover , .renameTaskButton i:hover{
-    font-size: 17px;
 }
 .deleteTaskButton i , .renameTaskButton i{
     font-size: 14px;
@@ -135,11 +121,11 @@
     width: 100%;
 }
 .modal-header button{
-background-color: transparent;
-border-style: none;
-cursor: pointer;
-height: 1.5em;
-width: 1.5em;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    height: 1.5em;
+    width: 1.5em;
 }
 .renameTaskInput{
     padding: 0.3em;

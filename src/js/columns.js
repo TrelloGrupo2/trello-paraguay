@@ -82,12 +82,12 @@ import {
 
     const renameColumnButton = document.createElement("button");
     renameColumnButton.classList.add("renameColumnButton");
+    renameColumnButton.classList.add("button");
     renameColumnButton.style.display = "none";
     renameColumnButton.onclick = function(){
       renameDisplay(this);
     }
     
-
     const renameColumnIcon = document.createElement("i");
     renameColumnIcon.classList.add("fa-solid");
     renameColumnIcon.classList.add("fa-pen");
@@ -95,6 +95,8 @@ import {
 
     let  deleteColumnButton = document.createElement("button");
     deleteColumnButton.classList.add("deleteColumnButton")
+    deleteColumnButton.classList.add("button")
+
     deleteColumnButton.onclick = function (){
       deleteColumn(this, mainObj);
     }
@@ -110,6 +112,7 @@ import {
     columnRenameContainer.style.display = 'none';
     const renameInput = document.createElement("input");
     renameInput.classList.add("renameInput");
+    renameInput.classList.add("input");
     renameInput.type = "text";
     renameInput.placeholder = "Insira o nome da coluna";
     renameInput.addEventListener("keyup", ({key}) => {
@@ -122,6 +125,7 @@ import {
 
     const cancelRenameButton = document.createElement("button");
     cancelRenameButton.classList.add("cancelRenameButton");
+    cancelRenameButton.classList.add("button");
     const cancelRenameIcon = document.createElement("i")
     cancelRenameIcon.classList.add("fa-solid");
     cancelRenameIcon.classList.add("fa-xmark");
@@ -132,6 +136,7 @@ import {
 
     const confirmRenameButton = document.createElement("button"); 
     confirmRenameButton.classList.add("confirmRenameButton");
+    confirmRenameButton.classList.add("button");
     const confirmRenameIcon = document.createElement("i")
     confirmRenameIcon.classList.add("fa-solid");
     confirmRenameIcon.classList.add("fa-check");
@@ -178,6 +183,7 @@ import {
 
     const newTaskInput = document.createElement("input");
     newTaskInput.classList.add("newTaskInput");
+    newTaskInput.classList.add("input");
 
     newTaskInput.type = "text";
     newTaskInput.placeholder = "Insira o nome da task";
@@ -187,6 +193,7 @@ import {
 
     const newTaskBackButton = document.createElement("button");
     newTaskBackButton.classList.add("newTaskBackButton");
+    newTaskBackButton.classList.add("button");
     newTaskBackButton.textContent = "Voltar";
     newTaskBackButton.onclick = function(){
       newTaskBack(this);
@@ -194,7 +201,8 @@ import {
 
     const newTaskConfirmButton = document.createElement("button");
     newTaskConfirmButton.classList.add("newTaskConfirmButton");
-    newTaskConfirmButton.textContent = "Confirmar"
+    newTaskConfirmButton.classList.add("button");
+    newTaskConfirmButton.textContent = "Confirmar";
     newTaskConfirmButton.onclick = function(){
       newTaskConfirm(this);
     }

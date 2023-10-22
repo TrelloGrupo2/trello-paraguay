@@ -1,7 +1,17 @@
+.board{
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-bottom: 4em;
+}
+
 .content{
     padding-top: 5em;
     display: flex;
     width: 100%;
+    height: auto;
 }
 
 
@@ -150,7 +160,7 @@
 .column .newTaskContainer{
     width: 100%;
     height: 6em;   
-    margin-top: 2em;
+    margin-top: 0.5em;
 }
 .newTaskConfirmContainer{
     display: flex;

@@ -42,42 +42,29 @@
   }
   /* CONTENT */
 
-  .dark .column{
+  .dark .column, .dark .modal-content, .dark .newColumnConfirmContainer{
     background-color: var(--dark-theme-color-1);
     color: azure;
   }
-  .dark .column i {
+  .dark .column i, .dark .modal-content i {
     color: azure;
   }
-  .dark .renameInput, .dark .newColumnInput, .dark .newTaskInput{
+  .dark input{
     border:none;
     outline-color: var(--dark-theme-color-4);
     background:  var(--dark-theme-color-5);
     color: white;
-
   }
- .dark .cancelRenameButton:hover, .dark .confirmRenameButton:hover, .dark .renameColumnButton:hover, .dark .deleteColumnButton:hover {
-
-    background-color: var(--dark-theme-color-3);
+  .dark .modal-description{
+    background:  var(--dark-theme-color-5);
+    color: white;
   }
-  .dark .newColumnConfirmContainer{
-    background-color: var(--dark-theme-color-1);
-  }
-  .dark .newColumnButton, .dark .newTaskButton{
+  .dark button{
     background-color: var(--dark-theme-color-1);
     opacity: 93%;
     color: white
   }
-  .dark .newColumnButton:hover, .dark .newTaskButton{
-    background-color: var(--dark-theme-color-3);
-    opacity: 100%;
-  }
-  .dark .newColumnConfirmButton, .dark .newColumnBackButton, .dark .newTaskBackButton, .dark .newTaskConfirmButton{
-    background-color: var(--dark-theme-color-1);
-    opacity: 93%;
-    color: white
-  }
-  .dark .newColumnConfirmButton:hover, .dark .newColumnBackButton:hover, .dark .newTaskBackButton:hover, .dark .newTaskConfirmButton:hover{
+   .dark button:hover{
     background-color: var(--dark-theme-color-5);
     opacity: 100%;
 }
@@ -88,7 +75,6 @@
     border-style:solid;
     border-width: 2px;
     border-color: var(--dark-theme-color-4);
-
  }
   /* CORES  WHITE*/
     /* NAV */
@@ -124,34 +110,16 @@
   .column i {
     color:var(--light-theme-color-5);
   }
-  .renameInput, .newColumnInput, .newTaskInput, .renameTaskInput{
+  .input{
     border:none;
     outline-color: var(--light-theme-color-6);
     background: white;
-
   }
-  .cancelRenameButton, .confirmRenameButton, .renameColumnButton, .deleteColumnButton{
-    background-color: var(--light-theme-color-2);
-
-  }
-  .cancelRenameButton:hover, .confirmRenameButton:hover, .renameColumnButton:hover, .deleteColumnButton:hover{
-
-    background-color: var(--light-theme-color-3);
-  }
-  .newColumnButton{
+  .button{
     background-color: var(--light-theme-color-2);
     opacity: 80%;
   }
-  .newColumnButton:hover{
-    background-color: var(--light-theme-color-3);
-    opacity: 100%;
-  }
-  .newColumnConfirmButton, .newColumnBackButton, .newTaskBackButton,.newTaskConfirmButton{
-    background-color: var(--light-theme-color-2);
-    opacity: 80%;
-
-  }
-  .newColumnConfirmButton:hover, .newColumnBackButton:hover, .newTaskBackButton:hover,.newTaskConfirmButton:hover{
+  .button:hover{
     background-color: var(--light-theme-color-3);
     opacity: 100%;
 }

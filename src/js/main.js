@@ -12,7 +12,7 @@ newColumnInput.addEventListener("keyup", ({key}) => {
   }
   })
 
-  const loadPage = document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     loadLocalStorage(mainObj)
   }, false);
 
