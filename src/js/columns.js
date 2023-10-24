@@ -1,5 +1,5 @@
 import {
-    mainObj,
+  mainObj,
 } from './main.js';
 import {
   savingColumnObj,
@@ -12,6 +12,7 @@ import {
     let newColumnContainer = document.querySelector("#newColumnContainer");
     const newColumnInput = document.querySelector("#newColumnInput");
     let newColumn = false;
+    
 
     if (columnTitle === undefined){
        columnTitle = newColumnInput.value;
@@ -25,6 +26,8 @@ import {
     const column = document.createElement("div");
     column.classList.add("column");
 
+   column.setAttribute("ondrop", "drop(event)");
+   column.setAttribute("ondragover", "allowDrop(event)");
     if(columnId === undefined){
     columnId = `column-Id-${Date.now()}`;
     }

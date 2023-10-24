@@ -50,7 +50,8 @@ window.newTaskConfirm = function (el, columnId, taskId, taskName, taskDescValue)
 
 
   let taskDescription = document.querySelector(".modal-description");
-  
+  taskContainer.setAttribute("draggable", "true");
+  taskContainer.setAttribute("ondragstart", "drag(event)");
 
 
   if (newTask === true) {
