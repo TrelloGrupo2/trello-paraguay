@@ -30,28 +30,27 @@ window.newTaskBack = function (el) {
   newTaskInput.value = "";
 };
 
-window.newTaskConfirm = function (el, columnId, taskId, taskName, taskDescValue) {
+window.createNewTask = function (el, columnId, taskId, taskName, taskDescValue) {
   let newTask = false;
   let column;
   let newTaskInput;
   let newTaskButtonConfirm;
   let newTaskContainer;
+  let tasksContainer;
   if (el != undefined) {
     // vendo se está sendo criada uma nova task tlgd rsrs kk
     newTask = true;
   }
 
-  const taskContainer = document.createElement("div");
-  taskContainer.classList.add("taskContainer");
+  const task = document.createElement("div");
+  task.classList.add("task");
 
   const taskTitle = document.createElement("span");
   taskTitle.classList.add("taskTitle");
-  
-
 
   let taskDescription = document.querySelector(".modal-description");
-  taskContainer.setAttribute("draggable", "true");
-  taskContainer.setAttribute("ondragstart", "drag(event)");
+  task.setAttribute("draggable", "true");
+  task.setAttribute("ondragstart", "drag(event)");
 
 
   if (newTask === true) {
@@ -71,50 +70,26 @@ window.newTaskConfirm = function (el, columnId, taskId, taskName, taskDescValue)
     }
   } else {
     column = document.getElementById(columnId);
-    newTaskContainer = column.firstChild.nextSibling;
+    newTaskContainer = column.firstChild.nextSibling.nextSibling;
   }
+  tasksContainer = column.firstChild.nextSibling
 
   taskTitle.id = `task-name-${taskId}`;
   taskTitle.textContent = taskName;
-  taskContainer.id = taskId;
+  task.id = taskId;
   taskDescription.value = taskDescValue;
 
-  taskContainer.onclick = () => {
+  task.onclick = () => {
     showModal(taskTitle.textContent, taskId);
   };
 
-  taskContainer.appendChild(taskTitle);
-  column.insertBefore(taskContainer, newTaskContainer);
+  task.appendChild(taskTitle);
+  tasksContainer.appendChild(task);
 
   if (newTask == true) {
     newTaskBack(newTaskButtonConfirm.previousSibling);
   }
   savingTaskObj(columnId, taskId, taskName, mainObj, taskDescValue);
-  console.log(mainObj);
   savingOnLocalStorage(mainObj);
 };
 
-function description(taskId) {
-  const descricaoText = document.getElementById("descricaoText-${taskId}");
-  const updateLS = () => {
-    localStorage.setItem("descricaoText-${taskId}", descricaoText.value);
-  };
-
-  // Para carregar a descrição do armazenamento local quando necessário:
-  const conteudoArmazenado = localStorage.getItem("descricaoText-${taskId}");
-  if (conteudoArmazenado) {
-    descricaoText.value = conteudoArmazenado;
-  }
-
-  // Adicione um ouvinte de eventos para salvar sempre que o usuário digitar na textarea:
-  descricaoText.addEventListener("input", updateLS);
-}
-
-function closeModal() {
-  body.removeChild(divBackground);
-  // divBackground = null;
-}
-
-// function getTaskDescription(columnId,taskId){
-//   return mainObj[columnId]?.[taskId]?.description || '';
-// }

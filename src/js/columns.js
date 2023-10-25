@@ -25,6 +25,10 @@ import {
  
     const column = document.createElement("div");
     column.classList.add("column");
+    const tasksContainer = document.createElement('div');
+    tasksContainer.classList.add('tasksContainer')
+    tasksContainer.id = 'tasksContainer';
+    
 
    column.setAttribute("ondrop", "drop(event)");
    column.setAttribute("ondragover", "allowDrop(event)");
@@ -36,9 +40,8 @@ import {
     let columnHeader = creatingColumnHeader(columnTitle);
     let newTaskContainer = creatingColumnNewTask();
     column.appendChild(columnHeader);
+    column.appendChild(tasksContainer);
     column.appendChild(newTaskContainer)
-
-
 
      content.insertBefore(column,newColumnContainer);
 
@@ -207,13 +210,13 @@ import {
     newTaskConfirmButton.classList.add("button");
     newTaskConfirmButton.textContent = "Confirmar";
     newTaskConfirmButton.onclick = function(){
-      newTaskConfirm(this);
+      createNewTask(this);
     }
 
     newTaskInput.addEventListener("keyup", ({key}) => {
       if (key === "Enter") {
         
-        newTaskConfirm(newTaskConfirmButton);
+        createNewTask(newTaskConfirmButton);
       }
       })
 

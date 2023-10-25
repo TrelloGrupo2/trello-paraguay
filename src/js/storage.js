@@ -38,7 +38,7 @@ function loadLocalStorage(mainObj) {
     createNewColumn(mainObj.id, mainObj.title);
 
     mainObj.tasks.forEach(function (mainObjTask) {
-      newTaskConfirm(undefined, mainObj.id, mainObjTask.id, mainObjTask.title,mainObjTask.description);
+      createNewTask(undefined, mainObj.id, mainObjTask.id, mainObjTask.title,mainObjTask.description);
     });
   });
 }

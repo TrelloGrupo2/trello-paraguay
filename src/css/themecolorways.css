@@ -68,10 +68,10 @@
     background-color: var(--dark-theme-color-5);
     opacity: 100%;
 }
-.dark .taskContainer{
+.dark .task{
     background-color: var(--dark-theme-color-5);
 }
- .dark .taskContainer:hover{
+ .dark .task:hover{
     border-style:solid;
     border-width: 2px;
     border-color: var(--dark-theme-color-4);
@@ -123,10 +123,10 @@
     background-color: var(--light-theme-color-3);
     opacity: 100%;
 }
-.taskContainer{
+.task{
     background-color: var(--light-theme-color-3);
 }
- .taskContainer:hover{
+ .task:hover{
     border-style:solid;
     border-width: 2px;
     border-color: var(--light-theme-color-6);
